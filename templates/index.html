@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>大學新生的AI小助手</title>
+</head>
+
+<body>
+
+    <h1>🤖 大學新鮮人的AI小助手</h1>
+
+    <p>
+        嗨！我是第一次來到校園的AI小助手。
+    </p>
+
+    <p>
+        今天遇到了好多我不知道怎麼解決的事情，
+        你願意幫助我嗎？
+    </p>
+
+    <button onclick="startGame()">開始遊戲</button>
+	<div id="game">
+	</div>
+	
+	<script>
+
+	let answered = false;
+
+function startGame() {
+
+    answered = false;
+
+   document.getElementById("game").innerHTML =
+    "<h2>第一關：迷路了！</h2>" +
+    "<p>🤖 上大學第一天，我想去教室，但是不知道往哪裡走。</p>" +
+    "<p>你會建議我怎麼做？</p>" +
+
+    "<button onclick='chooseA()'>🔎 A：先看校園地圖</button> " +
+    "<button onclick='chooseB()'>💬 B：詢問同學或老師</button> " +
+    "<button onclick='chooseC()'>🛠️ C：先自己找找看</button>" +
+
+"<p id='answer'></p>" +
+"<hr>";
+}
+	
+function chooseA() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+        "🤖 好方法！我可以先看地圖和教室標示，找到線索後再行動。" +
+        "<br><br><button onclick='level2()'>前往第二關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+function chooseB() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+        "🤖 好方法！遇到不知道的事情，我也可以主動詢問別人。" +
+        "<br><br><button onclick='level2()'>前往第二關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+function chooseC() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+        "🤖 好方法！我可以先試著找找看，如果走錯了，再調整方向。" +
+        "<br><br><button onclick='level2()'>前往第二關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+function level2() {
+
+    answered = false;
+
+    document.getElementById("game").innerHTML =
+        "<h2>第二關：教室找到了！</h2>" +
+        "<p>🤖 到了教室，有點社恐的我，接下來該怎麼做。</p>" +
+        "<p>你會建議我怎麼做？</p>" +
+
+        "<button onclick='level2A()'>🔎 A：隨機找個位置坐下</button> " +
+        "<button onclick='level2B()'>💬 B：開心的跟同學打招呼</button> " +
+        "<button onclick='level2C()'>🛠️ C：熟悉環境，四處觀察</button>" +
+
+        "<p id='answer'></p>" +
+        "<hr>";
+     
+}
+
+function level2A() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+            "🤖 還行，看看書，看看手機，做自己熟悉的事。" +
+            "<br><br><button onclick='level3()'>前往第三關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+function level2B() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+            "🤖 做的好，勇於突破自己，值得鼓勵。" +
+            "<br><br><button onclick='level3()'>前往第三關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+function level2C() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+            "🤖 選得也不錯，熟悉新環境，四處觀察，是到一個陌生環境必做的事情。" +
+            "<br><br><button onclick='level3()'>前往第三關 ➜</button>";
+
+                answered = true;
+    }
+}
+
+function level3() {
+
+    answered = false;
+
+    document.getElementById("game").innerHTML =
+    "<h2>第三關：第一次分組報告！</h2>" +
+    "<p>🤖 上課後，老師突然宣布要做分組報告，但我跟組員都不太熟，也不知道工作要怎麼分。</p>" +
+    "<p>你會建議我怎麼做？</p>" +
+
+    "<button onclick='level3A()'>🔎 A：自己先把全部工作做完</button> " +
+    "<button onclick='level3B()'>💬 B：先和組員討論，再分配每個人的工作</button> " +
+    "<button onclick='level3C()'>🛠️ C：先等等看，讓其他同學決定</button>" +
+
+    "<p id='answer'></p>" +
+    "<hr>";
+}
+
+function level3A() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+        "🤖 一個人全部做可能會很累，而且也失去了和組員合作的機會。" +
+        "<br><br><button onclick='level4()'>前往第四關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+
+function level3B() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+        "🤖 好主意！先和組員討論，了解大家擅長什麼，再一起分配工作會比較有效率。" +
+        "<br><br><button onclick='level4()'>前往第四關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+
+function level3C() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+        "🤖 如果一直等別人決定，可能會錯過參與討論的機會，我也可以試著主動提出自己的想法。" +
+        "<br><br><button onclick='level4()'>前往第四關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+function level4() {
+
+    answered = false;
+
+    document.getElementById("game").innerHTML =
+    "<h2>第四關：報告遇到困難！</h2>" +
+    "<p>🤖 分組報告做到一半，我負責整理資料，但是有些內容我看不懂，不知道該怎麼繼續。</p>" +
+    "<p>你會建議我怎麼做？</p>" +
+
+    "<button onclick='level4A()'>🔎 A：直接把網路找到的內容全部複製貼上</button> " +
+    "<button onclick='level4B()'>💬 B：請 AI 幫我整理重點，再自己確認內容是否正確</button> " +
+    "<button onclick='level4C()'>🛠️ C：看不懂就先跳過，不處理</button>" +
+
+    "<p id='answer'></p>" +
+    "<hr>";
+}
+
+function level4A() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+        "🤖 直接複製雖然很快，但如果自己沒有看懂，報告時可能也不知道該怎麼說。我想還是要先理解內容。" +
+        "<br><br><button onclick='level5()'>前往第五關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+
+function level4B() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+        "🤖 我可以先請 AI 幫我整理重點或解釋不懂的地方，再自己查資料確認。AI 可以幫助我理解，但不能完全代替我的判斷。" +
+        "<br><br><button onclick='level5()'>前往第五關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+
+function level4C() {
+
+    if (answered == false) {
+
+        document.getElementById("answer").innerHTML =
+        "🤖先做其他部分可以讓工作繼續，但看不懂的內容最後還是要回來處理。我可以先記下問題，再找同學、老師或 AI 幫忙。" +
+        "<br><br><button onclick='level5()'>前往第五關 ➜</button>";
+
+        answered = true;
+    }
+}
+
+function level5() {
+
+    answered = false;
+
+    document.getElementById("game").innerHTML =
+    "<h2>第五關：完成第一天的挑戰！</h2>" +
+
+    "<p>🤖 今天遇到了迷路、不熟悉環境、分組合作和看不懂資料的問題。</p>" +
+
+    "<p>一開始很多事情我都不知道該怎麼做，但我發現，遇到問題不一定要馬上知道答案。</p>" +
+
+    "<p>我可以先觀察、詢問別人，也可以利用 AI 幫忙整理資訊，再自己判斷。</p>" +
+
+    "<p><b>重要的不是每次都選到最好的方法，而是遇到問題時，願意想辦法把它解決。</b></p>" +
+
+    "<h2>🎉 恭喜你！完成大學新鮮人的第一天！</h2>" +
+
+    "<button onclick='startGame()'>🔄 再玩一次</button>" +
+
+    "<hr>";
+}
+
+
+</script>
+
+<hr>
+
+<h2>🤖 AI 小助手自由問答區</h2>
+
+<p>有什麼大學生活的問題，都可以問我！</p>
+
+<input
+    type="text"
+    id="question"
+    placeholder="例如：大學第一天怎麼交朋友？"
+    size="40"
+    maxlength="500"
+>
+
+<button onclick="askAI()">詢問 AI</button>
+
+<p id="aiAnswer"></p>
+
+<script>
+async function askAI() {
+
+    // 取得使用者輸入的問題
+    const question =
+        document.getElementById("question").value;
+
+    // 找到顯示 AI 回答的位置
+    const answerBox =
+        document.getElementById("aiAnswer");
+
+    // 檢查是否輸入問題
+    if (!question.trim()) {
+        answerBox.textContent = "請先輸入問題！";
+        return;
+    }
+
+    // 顯示等待訊息
+    answerBox.textContent = "🤖 AI 正在思考中...";
+
+    try {
+        // 把問題傳送給 Python
+        const response = await fetch("/ask", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                question: question
+            })
+        });
+
+        // 接收 Python 傳回的資料
+        const data = await response.json();
+
+        // 顯示 AI 回答
+        answerBox.textContent = response.ok
+            ? "🤖 " + data.answer
+            : "發生問題：" + data.error;
+
+    } catch (error) {
+        answerBox.textContent =
+            "目前無法連接 AI 服務。";
+    }
+}
+</script>
+
+
+</body>
+
+</html>
