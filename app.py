@@ -2,8 +2,19 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from google import genai
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(
+    app,
+    resources={
+        r"/ask": {
+            "origins": [
+                "https://pa12082010-papa.github.io"
+            ]
+        }
+    }
+)
 
 # 讀取 Gemini API 金鑰
 api_key = os.getenv("GEMINI_API_KEY")
